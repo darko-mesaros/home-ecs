@@ -1,0 +1,13 @@
+- name: Gather EC2 Metadata
+  amazon.aws.ec2_metadata_facts:
+
+- name: Setup user Darko
+  ansible.builtin.user:
+    name: darko
+    groups: sudo, gpio, i2c, adm, users
+
+- name: Deploy SSH key (from github) for Darko
+  ansible.posix.authorized_key:
+    user: darko
+    state: present
+    key: https://github.com/darko-mesaros.keys
