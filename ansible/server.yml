@@ -1,5 +1,8 @@
 ---
   - hosts: all
+    collections:
+      - ansible.posix
+        amazon.aws
     become: true
     become_method: sudo
     roles:

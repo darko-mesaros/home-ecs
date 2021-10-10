@@ -1,3 +1,6 @@
+- name: Gather EC2 Metadata
+  amazon.aws.ec2_metadata_facts:
+
 - name: Setup user Darko
   ansible.builtin.user:
     name: darko
